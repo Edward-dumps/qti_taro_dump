@@ -1,0 +1,462 @@
+<!-- SPEARHEAD Data Linux configuration
+     Copyright (c) 2021-2022 Qualcomm Technologies, Inc.
+     All Rights Reserved.
+     Confidential and Proprietary - Qualcomm Technologies, Inc. -->
+
+<!-- 'sampling_duration' is in milliseconds
+     This is for the full module
+
+     We expect the duration to be in multiples of 250 ms -->
+
+<!-- 'polling_mode' is in milliseconds
+         0x0 - One-Shot
+         0x1 - Interval Driven -->
+
+<!-- 'sampling_interval' is in milliseconds and is defined per bucket
+     The value in sampling interval is fixed and in multiples of 250 ms.
+     It cannot exceed the duration
+
+     Sampling durations : Ex. if duration is 1000 ms,
+     intervals can be 250 ms, 500 ms or 1000 ms
+
+     The sampling interval of all buckets must add up to 1000 ms -->
+
+<!-- 'logging_endpoint' is a bitmask indicating the logging endpoint for the stat
+         0x0 - default to diag
+         0x1 - additionally, send to QMI
+         0x2 - additionally, send to file -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list name="sprhd_datalnx_cfg">
+  <data name="sampling_duration" type="int"> 0 </data>
+  <data name="polling_mode" type="int"> 0 </data>
+
+  <list name="IPv4 statistics">
+    <data name="stat_bucket" type="string"> ipv4_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inReceives </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inOctets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inDelivers </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outForwDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outRequests </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outOctets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmOKs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragOKs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragCreates </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inHdrErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inTooBigErrors </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inNoRoutes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inAddrErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inDiscards </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outDiscards </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmTimeout </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmFails </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragFails </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+
+  <list name="IPv6 statistics">
+    <data name="stat_bucket" type="string"> ipv6_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inReceives </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inOctets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inDelivers </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outForwDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outRequests </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outOctets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmOKs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragOKs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragCreates </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inHdrErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inTooBigErrors </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inNoRoutes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inAddrErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inDiscards </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outDiscards </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmTimeout </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> ReasmFails </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> FragFails </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+
+  <list name="ICMPv4 statistics">
+    <data name="stat_bucket" type="string"> icmp_v4_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inMsgs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outMsgs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inCsumErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+  </list>
+
+  <list name="ICMPv6 statistics">
+    <data name="stat_bucket" type="string"> icmp_v6_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inMsgs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outMsgs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inCsumErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+  </list>
+
+  <list name="TCP statistics">
+    <data name="stat_bucket" type="string"> tcp_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inSegs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outSegs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> RetransSegs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inErrs </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outRsts </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inCsumErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TCPOFOQueue </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TCPOFODrop </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TCPZeroWindowDrop </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TCPRcvQDrop </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+
+  <list name="UDPv4 statistics">
+    <data name="stat_bucket" type="string"> udp_v4_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> noPorts </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> RcvbufErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> SndbufErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inCsumErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+  </list>
+
+  <list name="UDPv6 statistics">
+    <data name="stat_bucket" type="string"> udp_v6_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> inDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> noPorts </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> outDatagrams </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> RcvbufErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> SndbufErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> inCsumErrors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+  </list>
+
+  <list name="RMNET DATA statistics">
+    <data name="stat_bucket" type="string"> rmnet_data_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> Checksum OK </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Checksum valid bit not set </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Checksum validation failed </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Checksum computed in software </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Checksum computed in hardware </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing packets received </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalesced packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing checksum errors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing packet reconstructs </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close non-coalescable </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close L3 mismatch </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close L4 mismatch </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close HW NLO limit </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close HW packet limit </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close HW byte limit </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close HW time limit </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close HW eviction </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing close coalescable </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing TCP frames </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing TCP bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing UDP frames </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing UDP bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TSO packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> TSO packets arriving incorrectly </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> Coalescing buffer utilization </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> RSC buffer utilization </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> RSB buffer utilization </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+  </list>
+</list>

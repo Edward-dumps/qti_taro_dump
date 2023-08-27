@@ -1,0 +1,25 @@
+# Copyright (c) 2021-2022 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+on boot
+    #Create SPRHD daemon socket area
+    mkdir /dev/socket/sprhd 0750 radio radio
+
+on post-fs-data
+    #Create SPRHD daemon dir
+    mkdir /data/vendor/sprhd 0770 radio radio
+    chmod 0770 /data/vendor/sprhd
+
+service vendor.sprhdd /system/vendor/bin/sprhdd
+    class main
+    disabled
+    user radio
+    group radio net_admin net_raw diag
+    capabilities NET_ADMIN NET_RAW
+
+# The service will be restricted to userdebug build
+# variant. When we decide to move the service to user
+# variant we will re-evaluate the permissions
+on property:ro.build.type=userdebug
+    enable vendor.sprhdd

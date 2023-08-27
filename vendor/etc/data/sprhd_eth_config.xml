@@ -1,0 +1,314 @@
+<!-- SPEARHEAD ETH configuration
+     Copyright (c) 2021-2022 Qualcomm Technologies, Inc.
+     All Rights Reserved.
+     Confidential and Proprietary - Qualcomm Technologies, Inc. -->
+
+<!-- 'sampling_duration' is in milliseconds
+     This is for the full module
+
+     We expect the duration to be in multiples of 250 ms -->
+
+<!-- 'polling_mode' is in milliseconds
+         0x0 - One-Shot
+         0x1 - Interval Driven -->
+
+<!-- 'sampling_interval' is in milliseconds and is defined per bucket
+     The value in sampling interval is fixed and in multiples of 250 ms.
+     It cannot exceed the duration
+
+     Sampling durations : Ex. if duration is 1000 ms,
+     intervals can be 250 ms, 500 ms or 1000 ms
+
+     The sampling interval of all buckets must add up to 1000 ms -->
+
+<!-- 'logging_endpoint' is a bitmask indicating the logging endpoint for the stat
+         0x0 - default to diag
+         0x1 - additionally, send to QMI
+         0x2 - additionally, send to file -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list name="sprhd_eth_cfg">
+  <data name="sampling_duration" type="int"> 0 </data>
+  <data name="polling_mode" type="int"> 0 </data>
+
+  <list name="ETH iface info indication">
+    <data name="stat_bucket" type="string"> eth_iface_info_ind </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> interface_index </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> interface_name </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> driver_name </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> driver_version </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> mac_fw_version </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> phy_fw_version </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> bus_addr </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+
+  <list name="ETH iface link param indication">
+    <data name="stat_bucket" type="string"> eth_iface_link_param_ind </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> interface_index </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> autoneg </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> link_speed </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_flow_ctrl </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_flow_ctrl </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+
+  <list name="ETH iface debug stats">
+    <data name="stat_bucket" type="string"> eth_iface_debug_stats </data>
+    <data name="sampling_interval" type="int"> 1000 </data>
+    <listitem>
+      <data name="key" type="string"> interface_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <!-- ETH EMAC STATS TYPE -->
+    <listitem>
+      <data name="key" type="string"> rx_pause_frames </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_pause_frames </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_errors</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_errors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_drops</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_drops </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <!-- ETH HWP STATS TYPE -->
+    <listitem>
+      <data name="key" type="string"> rx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_errors</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_errors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_drops</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_drops </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <!-- ETH SWP STATS TYPE -->
+    <listitem>
+      <data name="key" type="string"> rx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_errors</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_errors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_drops</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_drops </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <!-- ETH EXCEPTION STATS TYPE -->
+    <listitem>
+      <data name="key" type="string"> rx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_packets </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_bytes </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_errors</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_errors </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_drops</data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_drops </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <!-- ETH RING STATS TYPE -->
+    <listitem>
+      <data name="key" type="string"> ring_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> offload </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_ring_size </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_ring_size </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_overflow_error_cnt </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_overflow_error_cnt </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_underflow_error_cnt </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_underflow_error_cnt </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_dma_channel_status </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_dma_channel_status </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_head_ptr_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_head_ptr_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_tail_ptr_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_tail_ptr_index </data>
+      <data name="logging_endpoint" type="int"> 1 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_interrupt_modc </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> rx_interrupt_modt </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_interrupt_modc </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+    <listitem>
+      <data name="key" type="string"> tx_interrupt_modt </data>
+      <data name="logging_endpoint" type="int"> 0 </data>
+    </listitem>
+  </list>
+</list>

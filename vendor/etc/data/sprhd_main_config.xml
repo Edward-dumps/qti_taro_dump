@@ -1,0 +1,18 @@
+<!-- SPEARHEAD Main configuration
+     Copyright (c) 2022 Qualcomm Technologies, Inc.
+     All Rights Reserved.
+     Confidential and Proprietary - Qualcomm Technologies, Inc. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list name="sprhd_main_cfg">
+  <data name="client_grace_period" type="int"> 50 </data> <!-- How much time clients have to collect data -->
+  <data name="qmi_client_grace_period" type="int"> 50 </data> <!-- How much time clients have to collect data during QMI -->
+  <data name="launch_grace_period" type="int"> 5 </data> <!-- Async thread launch tolerance -->
+  <data name="qmi_client_polling_time" type="int"> 100 </data> <!-- Time sent to client for priority pull  -->
+  <data name="qmi_polling_time" type="int"> 150 </data> <!-- sprhd server timer waiting on stats -->
+  <data name="qmi_indication" type="int"> 205 </data> <!-- Time before sending next QMI indication -->
+  <data name="qmi_indication_count" type="int"> 5 </data> <!-- How many indications to sent in a QMI period -->
+  <data name="timeout_qmi_indication" type="int"> 3 </data> <!-- Timeout sending indication to go back to regular polling - In seconds -->
+  <data name="dummy_qmi_indication" type="int"> 0 </data> <!-- Turn on dummy indications -->
+</list>
