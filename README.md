@@ -1,0 +1,14 @@
+# qssi-userdebug 12 SKQ1.220213.001 eng.lnxbui.20220308.202150 test-keys
+- manufacturer: qualcomm
+- platform: taro
+- codename: taro
+- flavor: qssi-userdebug
+- release: 12
+- id: SKQ1.220213.001
+- incremental: eng.lnxbui.20220308.202150
+- tags: test-keys
+- fingerprint: qti/taro/taro:12/SKQ1.220213.001/lnxbuild03082115:userdebug/test-keys
+- is_ab: true
+- brand: qti
+- branch: qssi-userdebug-12-SKQ1.220213.001-eng.lnxbui.20220308.202150-test-keys
+- repo: qti_taro_dump

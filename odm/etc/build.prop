@@ -1,0 +1,32 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.odm.brand=qti
+ro.product.odm.device=taro
+ro.product.odm.manufacturer=QUALCOMM
+ro.product.odm.model=Taro for arm64
+ro.product.odm.name=taro
+ro.odm.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+ro.odm.product.cpu.abilist32=armeabi-v7a,armeabi
+ro.odm.product.cpu.abilist64=arm64-v8a
+ro.odm.build.date=Tue Mar  8 21:15:57 PST 2022
+ro.odm.build.date.utc=1646802957
+ro.odm.build.fingerprint=qti/taro/taro:12/SKQ1.220213.001/lnxbuild03082115:userdebug/test-keys
+ro.odm.build.id=SKQ1.220213.001
+ro.odm.build.tags=test-keys
+ro.odm.build.type=userdebug
+ro.odm.build.version.incremental=eng.lnxbui.20220308.211901
+ro.odm.build.version.release=12
+ro.odm.build.version.release_or_codename=12
+ro.odm.build.version.sdk=31
+####################################
+# from variable ADDITIONAL_ODM_PROPERTIES
+####################################
+ro.vendor.qti.va_odm.support=1
+####################################
+# from variable PRODUCT_ODM_PROPERTIES
+####################################
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file
